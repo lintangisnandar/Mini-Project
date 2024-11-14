@@ -8,7 +8,7 @@ const LandingPage = () => {
   const handleGetStarted = () => {
     const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
     if (isLoggedIn) {
-      navigate('/plants');
+      navigate('/my-plants');
     } else {
       navigate('/sign-in');
     }

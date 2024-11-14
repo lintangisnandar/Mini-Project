@@ -57,7 +57,8 @@ const AddPlants = () => {
         growthStage,
         careTips,
       });
-      navigate('/plants');
+      navigate('/my-plants');
+      console.log('Form Data:', { name: plantName, type: plantType, location, growthStage });
     } catch (error) {
       console.error('Error adding plant:', error);
     }
