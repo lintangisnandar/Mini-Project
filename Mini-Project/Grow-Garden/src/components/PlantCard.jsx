@@ -1,29 +1,30 @@
 import React from 'react';
+import { FaSeedling } from 'react-icons/fa';
 
-const PlantCard = ({ name, type, description }) => {
+const PlantCard = ({ name, type, growthStage, location }) => {
   return (
-    <div className="relative bg-[#FDFBF8] p-4 rounded-lg shadow-lg w-64">
+    <div className="relative bg-[#FDFBF8] p-4 rounded-lg shadow-lg w-64 flex flex-col items-center">
       
-      {/* Image Section */}
-      <div className="w-full h-48 bg-gray-300 rounded overflow-hidden">
-        <img
-          src="plant-image.jpg"
-          alt="Plant"
-          className="object-cover w-full h-full"
-        />
+      {/* Icon and Plant Info */}
+      <div className="flex items-center">
+        {/* Plant Icon */}
+        <div className="mr-4 text-[#84A575] text-4xl">
+          <FaSeedling />
+        </div>
+        
+        {/* Plant Details */}
+        <div className="ml-4 text-left">
+          <h2 className="text-lg font-bold text-[#404C3B]">{name}</h2>
+          <p className="text-sm text-gray-600">Type: {type}</p>
+          <p className="text-sm text-gray-600">Stage: {growthStage}</p>
+          <p className="text-sm text-gray-600">Location: {location}</p>
+        </div>
       </div>
 
-      {/* Plant Info */}
-      <div className="mt-4 px-2">
-        <h2 className="text-lg font-bold text-[#404C3B]">{name}</h2>
-        <p className="text-sm text-gray-600">Type: {type}</p>
-        <p className="text-sm text-gray-600 mt-1">{description}</p>
-
-        {/* Action Button */}
-        <button className="mt-4 w-full bg-[#404C3B] text-white font-semibold py-2 rounded-lg hover:bg-[#56634E]">
-          View Details
-        </button>
-      </div>
+      {/* Action Button */}
+      <button className="mt-4 w-full bg-[#404C3B] text-white font-semibold py-2 rounded-lg hover:bg-[#56634E]">
+        View Details
+      </button>
     </div>
   );
 };

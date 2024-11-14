@@ -26,7 +26,7 @@ const Login = () => {
     // Static login validation
     if (email === 'admin@gmail.com' && password === 'password123') {
       login();
-      navigate('/plants');
+      navigate('/my-plants');
     } else if (email && password) {
       setErrorMessage((prev) => ({ ...prev, invalid: 'Invalid email or password' }));
     }
