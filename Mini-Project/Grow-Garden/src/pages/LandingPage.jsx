@@ -6,7 +6,12 @@ const LandingPage = () => {
   const navigate = useNavigate();
 
   const handleGetStarted = () => {
-    navigate('/plants');
+    const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
+    if (isLoggedIn) {
+      navigate('/plants');
+    } else {
+      navigate('/sign-in');
+    }
   };
 
   return (
