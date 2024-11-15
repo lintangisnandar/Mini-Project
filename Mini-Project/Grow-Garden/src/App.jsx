@@ -4,6 +4,7 @@ import LandingPage from './pages/LandingPage';
 import Login from './pages/Login';
 import MyPlants from './pages/MyPlants';
 import AddPlants from './pages/AddPlants';
+import PlantDetails from './pages/PlantDetails';
 import Navbar from './components/Navbar';
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
           <Route path="/sign-in" element={<Login />} />
           <Route path="/my-plants" element={<MyPlants />} />
           <Route path="/add-plants" element={<AddPlants />} />
+          <Route path="/my-plants/:plantName" element={<PlantDetails />} />
         </Routes>
       </div>
     </Router>

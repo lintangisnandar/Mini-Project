@@ -1,7 +1,16 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import { FaSeedling } from 'react-icons/fa';
 
 const PlantCard = ({ name, type, growthStage, location }) => {
+
+  const navigate = useNavigate();
+
+  const handleViewDetails = () => {
+    const encodedPlantName = encodeURIComponent(name);
+    navigate(`/my-plants/${encodedPlantName}`);
+  };
+
   return (
     <div className="relative bg-[#FDFBF8] p-4 rounded-lg shadow-lg w-64 flex flex-col items-center">
       
@@ -22,7 +31,7 @@ const PlantCard = ({ name, type, growthStage, location }) => {
       </div>
 
       {/* Action Button */}
-      <button className="mt-4 w-full bg-[#404C3B] text-white font-semibold py-2 rounded-lg hover:bg-[#56634E]">
+      <button onClick={handleViewDetails} className="mt-4 w-full bg-[#404C3B] text-white font-semibold py-2 rounded-lg hover:bg-[#56634E]">
         View Details
       </button>
     </div>
