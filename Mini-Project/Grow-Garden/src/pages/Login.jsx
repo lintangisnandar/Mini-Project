@@ -24,7 +24,7 @@ const Login = () => {
     }
 
     // Static login validation
-    if (email === 'admin@gmail.com' && password === 'password123') {
+    if (email === 'lintang@gmail.com' && password === 'growgarden123') {
       login();
       navigate('/my-plants');
     } else if (email && password) {
@@ -44,7 +44,7 @@ const Login = () => {
               placeholder="Enter your email here"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className={`w-full px-4 py-2 border ${errorMessage.email || errorMessage.invalid ? 'border-red-500' : 'border-[#E3DBC7]'} bg-white rounded-lg focus:outline-none focus:ring-2 focus:ring-[#84A575]`}
+              className={`w-full px-4 py-2 border ${errorMessage.email || errorMessage.invalid ? 'border-red-500' : 'border-[#E3DBC7]' } bg-white rounded-lg focus:outline-none focus:ring-2 focus:ring-[#84A575]`}
             />
             {errorMessage.email && <p className="text-red-500 text-sm mt-1">{errorMessage.email}</p>}
           </div>
