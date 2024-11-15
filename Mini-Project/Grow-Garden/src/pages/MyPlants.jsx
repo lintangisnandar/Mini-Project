@@ -2,12 +2,13 @@ import React, { useEffect, useState } from 'react';
 import PlantCard from '../components/PlantCard';
 import axios from 'axios';
 
-const Plants = () => {
+const MyPlants = () => {
+  const apiUrl = process.env.API_URL;
   const [plants, setPlants] = useState([]);
 
   const fetchData = async () => {
     try {
-      const response = await axios.get('https://6731742c7aaf2a9aff10ad4b.mockapi.io/plants');
+      const response = await axios.get(`${apiUrl}`);
       setPlants(response.data);
     } catch (error) {
       console.error("Error:", error);
@@ -39,4 +40,4 @@ const Plants = () => {
   );
 };
 
-export default Plants;
+export default MyPlants;

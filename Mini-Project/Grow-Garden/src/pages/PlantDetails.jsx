@@ -5,6 +5,7 @@ import { FaSeedling, FaTrashAlt, FaEdit, FaArrowLeft } from 'react-icons/fa';
 import ConfirmDeleteModal from '../components/ConfirmDeleteModal';
 
 const PlantDetails = () => {
+  const apiUrl = process.env.API_URL;
   const { plantName } = useParams();
   const navigate = useNavigate();
   const [plant, setPlant] = useState(null);
@@ -13,7 +14,7 @@ const PlantDetails = () => {
   useEffect(() => {
     const fetchPlantDetails = async () => {
       try {
-        const response = await axios.get(`https://6731742c7aaf2a9aff10ad4b.mockapi.io/plants?name=${plantName}`);
+        const response = await axios.get(`${apiUrl}?name=${plantName}`);
         setPlant(response.data[0]);
       } catch (error) {
         console.error("Error fetching plant details:", error);
@@ -28,7 +29,7 @@ const PlantDetails = () => {
 
   const handleDelete = async () => {
     try {
-      await axios.delete(`https://6731742c7aaf2a9aff10ad4b.mockapi.io/plants/${plant.id}`);
+      await axios.delete(`${apiUrl}/${plant.id}`);
       closeDeleteModal();
       navigate('/my-plants');
     } catch (error) {

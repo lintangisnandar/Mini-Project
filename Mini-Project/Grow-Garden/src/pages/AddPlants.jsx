@@ -4,6 +4,8 @@ import axios from 'axios';
 import { GoogleGenerativeAI } from '@google/generative-ai';
 
 const AddPlants = () => {
+  const apiUrl = process.env.API_URL;
+  const aiApiKey = process.env.AI_API_KEY;
   const navigate = useNavigate();
   const [plantName, setPlantName] = useState('');
   const [plantType, setPlantType] = useState('');
@@ -12,7 +14,7 @@ const AddPlants = () => {
   const [growthStage, setGrowthStage] = useState('');
   const [careTips, setCareTips] = useState('');
   
-  const apiKey = "AIzaSyBvf4Fc8bKqGrrwHBYHMOSSkr9Btqg4_os";
+  const apiKey = `${aiApiKey}`;
   const genAI = new GoogleGenerativeAI(apiKey);
 
   const handleAIRecommendation = async () => {
@@ -49,7 +51,7 @@ const AddPlants = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post('https://6731742c7aaf2a9aff10ad4b.mockapi.io/plants', {
+      await axios.post(`${apiUrl}`, {
         name: plantName,
         type: plantType,
         location,
