@@ -5,7 +5,7 @@ import { FaSeedling, FaTrashAlt, FaEdit, FaArrowLeft } from 'react-icons/fa';
 import ConfirmDeleteModal from '../components/ConfirmDeleteModal';
 
 const PlantDetails = () => {
-  const apiUrl = process.env.API_URL;
+  const apiUrl = import.meta.env.VITE_API_URL;
   const { plantName } = useParams();
   const navigate = useNavigate();
   const [plant, setPlant] = useState(null);

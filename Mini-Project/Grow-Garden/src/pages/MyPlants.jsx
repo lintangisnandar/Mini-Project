@@ -3,7 +3,7 @@ import PlantCard from '../components/PlantCard';
 import axios from 'axios';
 
 const MyPlants = () => {
-  const apiUrl = process.env.API_URL;
+  const apiUrl = import.meta.env.VITE_API_URL;
   const [plants, setPlants] = useState([]);
 
   const fetchData = async () => {

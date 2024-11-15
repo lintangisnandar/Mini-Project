@@ -4,8 +4,8 @@ import axios from 'axios';
 import { GoogleGenerativeAI } from '@google/generative-ai';
 
 const AddPlants = () => {
-  const apiUrl = process.env.API_URL;
-  const aiApiKey = process.env.AI_API_KEY;
+  const apiUrl = import.meta.env.VITE_API_URL;
+  const aiApiKey = import.meta.env.VITE_API_KEY;
   const navigate = useNavigate();
   const [plantName, setPlantName] = useState('');
   const [plantType, setPlantType] = useState('');
