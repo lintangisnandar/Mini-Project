@@ -16,7 +16,7 @@ const Navbar = () => {
   };
 
   return (
-    <div className="navbar bg-[#809B70] p-4">
+    <div className="navbar sticky top-0 bg-[#809B70] p-4 z-50">
       <div className="flex-1">
         <Link to="/" className="btn btn-ghost text-white text-2xl font-bold">GrowGarden</Link>
       </div>

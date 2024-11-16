@@ -6,6 +6,7 @@ import MyPlants from './pages/MyPlants';
 import AddPlants from './pages/AddPlants';
 import PlantDetails from './pages/PlantDetails';
 import Navbar from './components/Navbar';
+import ProtectedRoute from './components/ProtectedRoute';
 
 function App() {
   return (
@@ -16,9 +17,38 @@ function App() {
         <Routes>
           <Route path="/" element={<LandingPage />} />
           <Route path="/sign-in" element={<Login />} />
-          <Route path="/my-plants" element={<MyPlants />} />
-          <Route path="/add-plants" element={<AddPlants />} />
-          <Route path="/my-plants/:plantName" element={<PlantDetails />} />
+          <Route
+            path="/my-plants"
+            element={
+              <ProtectedRoute>
+                <MyPlants />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/add-plants"
+            element={
+              <ProtectedRoute>
+                <AddPlants />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/edit-plant/:id"
+            element={
+              <ProtectedRoute>
+                <AddPlants />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/my-plants/:plantName"
+            element={
+              <ProtectedRoute>
+                <PlantDetails />
+              </ProtectedRoute>
+            }
+          />
         </Routes>
       </div>
     </Router>
