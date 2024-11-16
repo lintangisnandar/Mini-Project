@@ -18,6 +18,7 @@ function App() {
           <Route path="/sign-in" element={<Login />} />
           <Route path="/my-plants" element={<MyPlants />} />
           <Route path="/add-plants" element={<AddPlants />} />
+          <Route path="/edit-plant/:id" element={<AddPlants />} />
           <Route path="/my-plants/:plantName" element={<PlantDetails />} />
         </Routes>
       </div>
