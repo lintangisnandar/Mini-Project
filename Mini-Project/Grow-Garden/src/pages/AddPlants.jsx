@@ -111,24 +111,41 @@ const AddPlants = () => {
         </div>
         <div className="mb-4">
           <label className="block text-[#84A575] font-semibold mb-2">Plant Type</label>
-          <input
-            type="text"
-            placeholder="Enter plant type"
+          <select
             value={plantType}
             onChange={(e) => setPlantType(e.target.value)}
             className="w-full px-3 py-2 border border-[#84A575] rounded-md bg-white text-[#84A575]"
-          />
+          >
+            <option value="" disabled hidden>Select plant type</option>
+            <option value="Succulent">Succulent</option>
+            <option value="Flowering">Flowering</option>
+            <option value="Foliage">Foliage</option>
+            <option value="Herb">Herb</option>
+            <option value="Cactus">Cactus</option>
+            <option value="Tree">Tree</option>
+            <option value="Shrub">Shrub</option>
+            <option value="Vine">Vine</option>
+            <option value="Ornamental Grass">Ornamental Grass</option>
+            <option value="Aquatic Plant">Aquatic Plant</option>
+          </select>
         </div>
+
         <div className="mb-4">
           <label className="block text-[#84A575] font-semibold mb-2">Location</label>
-          <input
-            type="text"
-            placeholder="Enter location"
+          <select
             value={location}
             onChange={(e) => setLocation(e.target.value)}
             className="w-full px-3 py-2 border border-[#84A575] rounded-md bg-white text-[#84A575]"
-          />
+          >
+            <option value="" disabled hidden>Select location</option>
+            <option value="Indoor">Indoor</option>
+            <option value="Outdoor">Outdoor</option>
+            <option value="Balcony">Balcony</option>
+            <option value="Garden">Garden</option>
+            <option value="Greenhouse">Greenhouse</option>
+          </select>
         </div>
+
         <div className="mb-4">
           <label className="block text-[#84A575] font-semibold mb-2">Date Planted</label>
           <input
@@ -138,15 +155,21 @@ const AddPlants = () => {
             className="w-full px-3 py-2 border border-[#84A575] rounded-md bg-white text-[#84A575]"
           />
         </div>
+
         <div className="mb-4">
           <label className="block text-[#84A575] font-semibold mb-2">Growth Stage</label>
-          <input
-            type="text"
-            placeholder="Enter growth stage"
+          <select
             value={growthStage}
             onChange={(e) => setGrowthStage(e.target.value)}
             className="w-full px-3 py-2 border border-[#84A575] rounded-md bg-white text-[#84A575]"
-          />
+          >
+            <option value="" disabled hidden>Select growth stage</option>
+            <option value="Seedling">Seedling</option>
+            <option value="Young">Young</option>
+            <option value="Mature">Mature</option>
+            <option value="Flowering">Flowering</option>
+            <option value="Fruiting">Fruiting</option>
+          </select>
         </div>
         <div className="mb-4">
           <button
