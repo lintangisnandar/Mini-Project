@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { FaSeedling, FaTrashAlt, FaEdit, FaArrowLeft } from 'react-icons/fa';
-import ConfirmDeleteModal from '../components/ConfirmDeleteModal';
+import ConfirmDeleteModal from '../components/Modal/ConfirmDeleteModal';
 
 const PlantDetails = () => {
   const apiUrl = import.meta.env.VITE_API_URL;
@@ -46,15 +46,15 @@ const PlantDetails = () => {
   }
 
   return (
-    <div className="relative p-8 min-h-screen bg-gradient-to-br from-[#FDFBF8] to-[#E3DBC7]">
+    <div className="relative p-4 sm:p-8 min-h-screen bg-gradient-to-br from-[#FDFBF8] to-[#E3DBC7]">
       <button
         onClick={() => navigate('/my-plants')}
-        className="absolute top-4 left-4 p-2 bg-white shadow-md rounded-full text-[#84A575] hover:text-[#56634E] hover:bg-gray-100"
+        className="absolute top-2 left-2 sm:top-4 sm:left-4 p-2 bg-white shadow-md rounded-full text-[#84A575] hover:text-[#56634E] hover:bg-gray-100"
       >
-        <FaArrowLeft className="text-xl" />
+        <FaArrowLeft className="text-lg sm:text-xl" />
       </button>
 
-      <div className="max-w-2xl mx-auto m-6 bg-white shadow-lg rounded-lg overflow-hidden">
+      <div className="max-w-full sm:max-w-2xl mx-auto m-6 bg-white shadow-lg rounded-lg overflow-hidden">
         <div className="flex items-center bg-[#FDFBF8] p-6 border-b">
           <FaSeedling className="text-[#84A575] text-5xl mr-6" />
           <div>
@@ -77,17 +77,16 @@ const PlantDetails = () => {
           </div>
         </div>
 
-        <div className="p-6 flex justify-between items-center bg-[#FDFBF8] border-t">
+        <div className="p-4 sm:p-6 flex flex-col sm:flex-row justify-between items-center space-y-4 sm:space-y-0">
           <button
-            className="px-4 py-2 flex items-center bg-[#84A575] text-white font-semibold rounded-lg hover:bg-[#56634E]"
+            className="w-full sm:w-auto px-4 py-2 flex items-center bg-[#84A575] text-white font-semibold rounded-lg hover:bg-[#56634E]"
             onClick={() => navigate(`/edit-plant/${plant.id}`)}
           >
             <FaEdit className="mr-2" />
             Edit
           </button>
-
           <button
-            className="px-4 py-2 flex items-center bg-red-500 text-white font-semibold rounded-lg hover:bg-red-600"
+            className="w-full sm:w-auto px-4 py-2 flex items-center bg-red-500 text-white font-semibold rounded-lg hover:bg-red-600"
             onClick={openDeleteModal}
           >
             <FaTrashAlt className="mr-2" />

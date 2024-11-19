@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import PlantCard from '../components/PlantCard';
+import PlantCard from '../components/PlantCard/PlantCard';
 import axios from 'axios';
 
 const MyPlants = () => {
@@ -21,10 +21,8 @@ const MyPlants = () => {
 
   return (
     <div>
-      <div className="p-8 bg-[#E3DBC7] min-h-screen">
-        
-        {/* Grid Layout for Plant Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-1 m-4">
+      <div className="p-4 sm:p-8 bg-[#E3DBC7] min-h-screen">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
           {plants.map((plant) => (
             <PlantCard
             key={plant.id}

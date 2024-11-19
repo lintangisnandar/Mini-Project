@@ -5,7 +5,7 @@ import Login from './pages/Login';
 import MyPlants from './pages/MyPlants';
 import AddPlants from './pages/AddPlants';
 import PlantDetails from './pages/PlantDetails';
-import Navbar from './components/Navbar';
+import Navbar from './components/Navbar/Navbar';
 import ProtectedRoute from './components/ProtectedRoute';
 
 function App() {
