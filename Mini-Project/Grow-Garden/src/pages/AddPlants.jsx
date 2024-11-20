@@ -27,9 +27,10 @@ const AddPlants = () => {
       const fetchPlantData = async () => {
         try {
           const response = await axios.get(`${apiUrl}/${id}`);
-          const { name, type, location, datePlanted, growthStage, careTips } = response.data;
+          const { name, type, imageURL, location, datePlanted, growthStage, careTips } = response.data;
           setPlantName(name);
           setPlantType(type);
+          setImageURL(imageURL);
           setLocation(location);
           setDatePlanted(datePlanted);
           setGrowthStage(growthStage);

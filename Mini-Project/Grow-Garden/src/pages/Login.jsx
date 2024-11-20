@@ -9,8 +9,8 @@ const Login = () => {
   const navigate = useNavigate();
   const { login } = useAuthStore(); // Ambil fungsi login dari Zustand
 
-  const handleLogin = (event) => {
-    event.preventDefault();
+  const handleLogin = (e) => {
+    e.preventDefault();
 
     // Reset error message
     setErrorMessage({ email: '', password: '', invalid: '' });
