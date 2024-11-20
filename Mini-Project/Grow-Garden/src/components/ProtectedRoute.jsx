@@ -1,9 +1,9 @@
 import React from 'react';
 import { Navigate } from 'react-router-dom';
-import { useAuth } from './hooks/useAuth';
+import useAuthStore from '../state/authStore';
 
 const ProtectedRoute = ({ children }) => {
-  const { isLoggedIn } = useAuth();
+  const { isLoggedIn } = useAuthStore();
 
   if (!isLoggedIn) {
     // Redirect ke halaman login jika belum login

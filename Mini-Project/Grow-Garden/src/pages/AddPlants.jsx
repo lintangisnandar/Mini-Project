@@ -11,6 +11,7 @@ const AddPlants = () => {
   const [isEdit, setIsEdit] = useState(false);
   const [plantName, setPlantName] = useState('');
   const [plantType, setPlantType] = useState('');
+  const [imageURL, setImageURL] = useState('');
   const [location, setLocation] = useState('');
   const [datePlanted, setDatePlanted] = useState('');
   const [growthStage, setGrowthStage] = useState('');
@@ -50,6 +51,10 @@ const AddPlants = () => {
     if (!plantType) {
       newErrors.plantType = 'Please select a plant type.';
     }
+
+    if (!/^https?:\/\/.+\.(jpg|jpeg|png|gif)$/.test(imageURL)) {
+      newErrors.imageURL = 'Please enter a valid image URL (jpg, jpeg, png, or gif).';
+    }    
 
     if (!location) {
       newErrors.location = 'Please select a location.';
@@ -108,6 +113,7 @@ const AddPlants = () => {
     const plantData = {
       name: plantName,
       type: plantType,
+      imageURL,
       location,
       datePlanted,
       growthStage,
@@ -168,6 +174,19 @@ const AddPlants = () => {
           </select>
           {errors.plantType && <p className="text-red-500 text-sm mt-1">{errors.plantType}</p>}
         </div>
+        <div className="mb-4">
+          <label className="block text-[#84A575] font-semibold mb-2">Image URL</label>
+          <input
+            type="url"
+            placeholder="Enter image URL"
+            value={imageURL}
+            onChange={(e) => setImageURL(e.target.value)}
+            className={`w-full px-3 py-2 border ${
+              errors.imageURL ? 'border-red-500' : 'border-[#84A575]'
+            } rounded-md bg-white text-[#84A575]`}
+          />
+          {errors.imageURL && <p className="text-red-500 text-sm mt-1">{errors.imageURL}</p>}
+        </div>;
         <div className="mb-4">
           <label className="block text-[#84A575] font-semibold mb-2">Location</label>
           <select

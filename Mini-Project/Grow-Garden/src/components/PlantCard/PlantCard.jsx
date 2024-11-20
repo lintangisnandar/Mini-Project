@@ -1,24 +1,26 @@
 import React from 'react';
-import { FaSeedling } from 'react-icons/fa';
 import useNavigateToDetails from '../hooks/useNavigateToDetails';
 
-const PlantCard = ({ name, type, growthStage, location }) => {
+const PlantCard = ({ name, type, imageURL, growthStage, Location }) => {
   const handleViewDetails = useNavigateToDetails(name);
 
   return (
-    <div className="relative bg-[#FDFBF8] p-4 rounded-lg shadow-lg w-full max-w-sm flex flex-col items-center">
-      <div className="flex items-center">
-        <div className="mr-4 text-[#84A575] text-4xl">
-          <FaSeedling />
-        </div>
-        <div className="ml-4 text-left">
-          <h2 className="text-lg font-bold text-[#404C3B]">{name}</h2>
-          <p className="text-sm text-gray-600">Type: {type}</p>
-          <p className="text-sm text-gray-600">Stage: {growthStage}</p>
-          <p className="text-sm text-gray-600">Location: {location}</p>
-        </div>
+    <div className="bg-[#FDFBF8] p-4 rounded-lg shadow-lg w-full max-w-sm flex flex-col">
+      <img
+        src={imageURL || 'https://via.placeholder.com/150'}
+        alt={name}
+        className="w-full h-48 object-cover rounded-lg"
+      />
+      <div className="mt-4 text-left">
+        <h2 className="text-lg font-bold text-[#404C3B]">{name}</h2>
+        <p className="text-sm text-gray-600">Type: {type}</p>
+        <p className="text-sm text-gray-600">Stage: {growthStage}</p>
+        <p className="text-sm text-gray-600">Location: {Location}</p>
       </div>
-      <button onClick={handleViewDetails} className="mt-4 w-full bg-[#404C3B] text-white font-semibold py-2 rounded-lg hover:bg-[#56634E]">
+      <button
+        onClick={handleViewDetails}
+        className="mt-4 w-full bg-[#404C3B] text-white font-semibold py-2 rounded-lg hover:bg-[#56634E]"
+      >
         View Details
       </button>
     </div>

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import axios from 'axios';
-import { FaSeedling, FaTrashAlt, FaEdit, FaArrowLeft } from 'react-icons/fa';
+import { FaTrashAlt, FaEdit, FaArrowLeft } from 'react-icons/fa';
 import ConfirmDeleteModal from '../components/Modal/ConfirmDeleteModal';
 
 const PlantDetails = () => {
@@ -55,13 +55,18 @@ const PlantDetails = () => {
       </button>
 
       <div className="max-w-full sm:max-w-2xl mx-auto m-6 bg-white shadow-lg rounded-lg overflow-hidden">
-        <div className="flex items-center bg-[#FDFBF8] p-6 border-b">
-          <FaSeedling className="text-[#84A575] text-5xl mr-6" />
-          <div>
-            <h1 className="text-2xl font-bold text-[#404C3B]">{plant.name}</h1>
-            <p className="text-[#84A575] font-medium">Type: {plant.type}</p>
-          </div>
+      <div className="flex items-center bg-[#FDFBF8] p-6 border-b">
+        <img
+          src={plant.imageURL || 'https://via.placeholder.com/150'}
+          alt={plant.name}
+          className="w-24 h-24 object-cover rounded-lg mr-6"
+        />
+        <div>
+          <h1 className="text-2xl font-bold text-[#404C3B]">{plant.name}</h1>
+          <p className="text-[#84A575] font-medium">Type: {plant.type}</p>
         </div>
+      </div>
+
 
         <div className="p-6 space-y-4">
           <div>

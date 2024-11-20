@@ -1,12 +1,13 @@
 import React from 'react';
 import { FaLeaf, FaMobileAlt, FaSeedling } from 'react-icons/fa';
 import { useNavigate } from 'react-router-dom';
+import useAuthStore from '../state/authStore';
 
 const LandingPage = () => {
   const navigate = useNavigate();
+  const { isLoggedIn } = useAuthStore();
 
   const handleGetStarted = () => {
-    const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
     if (isLoggedIn) {
       navigate('/my-plants');
     } else {
