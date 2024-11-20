@@ -75,7 +75,7 @@ const AddPlants = () => {
     - Growth Stage: ${growthStage}
 
     Care instructions should include:
-    - Watering frequency (e.g., daily, weekly)
+    - Watering frequency (e.g., how many times, daily, weekly)
     - Light requirement (e.g., full sun, partial shade, low light)
     - Humidity level (e.g., high, moderate, low)
     - Ideal temperature range
@@ -85,7 +85,7 @@ const AddPlants = () => {
     try {
       const model = genAI.getGenerativeModel({ model: 'gemini-1.5-flash-latest' });
       const chatSession = model.startChat({
-        generationConfig: { maxOutputTokens: 100, temperature: 0.7 }
+        generationConfig: { maxOutputTokens: 300, temperature: 0.7 }
       });
 
       const result = await chatSession.sendMessage(prompt);
