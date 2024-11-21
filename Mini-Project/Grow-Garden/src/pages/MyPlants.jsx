@@ -30,7 +30,6 @@ const MyPlants = () => {
             type={plant.type}
             imageURL={plant.imageURL}
             growthStage={plant.growthStage}
-            location={plant.location}
             />
           ))}
         </div>

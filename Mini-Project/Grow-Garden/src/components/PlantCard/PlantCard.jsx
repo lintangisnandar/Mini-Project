@@ -1,7 +1,7 @@
 import React from 'react';
 import useNavigateToDetails from '../hooks/useNavigateToDetails';
 
-const PlantCard = ({ name, type, imageURL, growthStage, Location }) => {
+const PlantCard = ({ name, type, imageURL, growthStage }) => {
   const handleViewDetails = useNavigateToDetails(name);
 
   return (
@@ -15,7 +15,6 @@ const PlantCard = ({ name, type, imageURL, growthStage, Location }) => {
         <h2 className="text-lg font-bold text-[#404C3B]">{name}</h2>
         <p className="text-sm text-gray-600">Type: {type}</p>
         <p className="text-sm text-gray-600">Stage: {growthStage}</p>
-        <p className="text-sm text-gray-600">Location: {Location}</p>
       </div>
       <button
         onClick={handleViewDetails}
